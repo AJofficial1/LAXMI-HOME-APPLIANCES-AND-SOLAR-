@@ -569,7 +569,8 @@
         </div>
 
 
-        <form id="bookingForm" class="booking-form">
+        <!-- Formspree Action आणि Name ॲट्रिब्यूट्स जोडलेला फॉर्म -->
+        <form id="bookingForm" class="booking-form" action="https://formspree.io/f/xjyvebwv" method="POST">
 
             <h3>Service Booking Form</h3>
 
@@ -578,6 +579,7 @@
             <input
                 type="text"
                 id="customerName"
+                name="customerName"
                 placeholder="उदा. Ajay"
                 required>
 
@@ -587,6 +589,7 @@
             <input
                 type="tel"
                 id="customerPhone"
+                name="customerPhone"
                 placeholder="10 digit mobile number"
                 pattern="[0-9]{10}"
                 maxlength="10"
@@ -595,7 +598,7 @@
 
             <label>सेवा निवडा</label>
 
-            <select id="service" required>
+            <select id="service" name="service" required>
 
                 <option value="">-- सेवा निवडा --</option>
 
@@ -628,6 +631,7 @@
 
             <textarea
                 id="customerAddress"
+                name="customerAddress"
                 placeholder="पूर्ण पत्ता"
                 required></textarea>
 
@@ -636,6 +640,7 @@
 
             <textarea
                 id="customerMessage"
+                name="customerMessage"
                 placeholder="तुम्हाला कोणती समस्या आहे?"></textarea>
 
 
@@ -648,7 +653,7 @@
             </button>
 
             <p class="form-note">
-                * हा demo booking form आहे.
+                * सबमिट केल्यानंतर तुमची रिक्वेस्ट नोंदवली जाईल.
             </p>
 
         </form>
