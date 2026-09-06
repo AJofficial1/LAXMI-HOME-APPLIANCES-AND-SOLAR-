@@ -23,7 +23,6 @@
     <nav id="navMenu">
         <a href="#home" data-mr="होम" data-hi="होम" data-en="Home">होम</a>
         <a href="#services" data-mr="सेवा" data-hi="सेवाएं" data-en="Services">सेवा</a>
-        <a href="#estimator" data-mr="खर्च तपासा" data-hi="मूल्य कैलकुलेटर" data-en="Price Calculator">खर्च तपासा</a>
         <a href="#track" data-mr="ट्रॅक सर्व्हिस" data-hi="ट्रैक सर्विस" data-en="Track Service">ट्रॅक सर्व्हिस</a>
         <a href="#about" data-mr="आमच्याबद्दल" data-hi="हमारे बारे में" data-en="About">आमच्याबद्दल</a>
         <a href="#gallery" data-mr="फोटो" data-hi="फोटो" data-en="Gallery">फोटो</a>
@@ -48,128 +47,98 @@
     </div>
 </header>
 
-<!-- ================= EMERGENCY BANNER ================= -->
-<div class="emergency-banner">
-    <span>🚨 आपत्कालीन गॅस गळती (Gas Leakage) किंवा लाईट बिघाडासाठी तात्काळ कॉल करा: <a href="tel:+917020279531"><strong>+91 7020279531</strong></a></span>
-</div>
-
-<!-- ================= HERO ================= -->
+<!-- ================= HERO SECTION (NEW BANNER STYLE) ================= -->
 <section id="home" class="hero">
     <div class="hero-content">
-        <div class="badge"><i class="fa-solid fa-circle-check"></i> Trusted Home Service</div>
-        <h1>तुमच्या घरासाठी <span>विश्वासू सेवा</span></h1>
-        <p>Gas • Electrical • Home Appliances • Solar</p>
-        <p class="hero-description">तुमच्या घरातील गॅस, इलेक्ट्रिकल, होम अप्लायन्सेस आणि सोलार संबंधित सर्व सेवांसाठी एका कॉलवर घरपोच सेवा.</p>
+        <div class="badge"><i class="fa-solid fa-star"></i> विश्वास आपला, सेवा आमची...</div>
+        <h1>लक्ष्मी <span>होम अप्लायन्सेस ॲन्ड सोलर</span></h1>
+        <p class="tagline-sub">Gas • Electrical • Home Appliances • Solar Installation</p>
+        <p class="hero-description">घरातील गॅस दुरुस्ती, गिझर, वायरिंग, कुलर आणि सोलार संबंधित सर्व सेवांसाठी एका कॉलवर घरपोच विश्वासू सेवा.</p>
         <div class="hero-buttons">
-            <a href="tel:+917020279531" class="btn primary"><i class="fa-solid fa-phone"></i> Call Now</a>
+            <a href="tel:+917020279531" class="btn primary"><i class="fa-solid fa-phone"></i> Call Now: 7020279531</a>
             <a href="https://wa.me/917020279531?text=नमस्कार,%20मला%20सेवेबाबत%20माहिती%20हवी%20आहे." target="_blank" class="btn whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
         </div>
         <div class="hero-info">
-            <div><i class="fa-solid fa-location-dot"></i> <span>Nanded, Maharashtra</span></div>
-            <div><i class="fa-solid fa-solar-panel"></i> <span>Solar Installation</span></div>
+            <div><i class="fa-solid fa-location-dot"></i> <span>भावसार चौक, नांदेड - 431605</span></div>
+            <div><i class="fa-solid fa-shield-halved"></i> <span>100% सुरक्षित सेवा</span></div>
         </div>
     </div>
     <div class="hero-image">
-        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1000&q=80" alt="Solar Panel">
+        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1000&q=80" alt="Solar & Appliances">
         <div class="floating-card">
             <i class="fa-solid fa-bolt"></i>
-            <div><strong>All Services</strong><small>At Your Home</small></div>
+            <div><strong>Expert Technicians</strong><small>At Your Doorstep</small></div>
         </div>
     </div>
 </section>
 
-<!-- ================= QUICK SERVICES ================= -->
+<!-- ================= QUICK SERVICES (BANNER STYLE ICONS) ================= -->
 <section class="quick-services">
-    <div class="quick-card"><i class="fa-solid fa-fire-flame-simple"></i><h3>Gas Service</h3><p>Repair & Pipeline</p></div>
-    <div class="quick-card"><i class="fa-solid fa-plug"></i><h3>Electrical</h3><p>Home Electrical Work</p></div>
-    <div class="quick-card"><i class="fa-solid fa-fan"></i><h3>Appliances</h3><p>Repair & Maintenance</p></div>
-    <div class="quick-card"><i class="fa-solid fa-solar-panel"></i><h3>Solar</h3><p>Installation</p></div>
-</section>
-
-<!-- ================= PRICE ESTIMATOR TOOL ================= -->
-<section id="estimator" class="section estimator-section">
-    <div class="section-heading">
-        <span>ESTIMATE COST</span>
-        <h2>अंदाजे खर्च <strong>तपासा</strong></h2>
-        <p>तुमच्या सेवेचा अंदाज घेण्यासाठी खालील पर्याय निवडा.</p>
-    </div>
-    <div class="estimator-box">
-        <label>सेवा निवडा:</label>
-        <select id="estimatorService" onchange="calculatePrice()">
-            <option value="150">गॅस दुरुस्ती / गळती तपासणी (अंदाजे ₹150 पासून)</option>
-            <option value="200">गॅस / इलेक्ट्रिक गिझर दुरुस्ती (अंदाजे ₹200 पासून)</option>
-            <option value="150">कुलर किंवा पंखा दुरुस्ती (अंदाजे ₹150 पासून)</option>
-            <option value="250">घरातील लाईट वायरिंग / बोर्ड काम (अंदाजे ₹250 पासून)</option>
-            <option value="500">गॅस पाईपलाईन फिटिंग (अंदाजे ₹500 पासून)</option>
-            <option value="1000">सोलार इन्स्टॉलेशन सल्ला व फिटिंग (चर्चा करून)</option>
-        </select>
-        <div class="price-display">
-            <span>अंदाजे खर्च (Minimum Visit/Service Charge):</span>
-            <h3 id="estimatedPrice">₹150</h3>
-        </div>
-        <a href="#booking" class="btn primary full">ही सेवा बुक करा</a>
-    </div>
+    <div class="quick-card"><i class="fa-solid fa-fire-flame-simple"></i><h3>गॅस दुरुस्ती</h3><p>Gas Repair & Pipeline</p></div>
+    <div class="quick-card"><i class="fa-solid fa-plug"></i><h3>इलेक्ट्रिकल कामे</h3><p>Home Wiring & Boards</p></div>
+    <div class="quick-card"><i class="fa-solid fa-fan"></i><h3>अप्लायन्सेस</h3><p>Cooler, Fan & Geyser</p></div>
+    <div class="quick-card"><i class="fa-solid fa-solar-panel"></i><h3>सोलार इन्स्टॉलेशन</h3><p>Solar Setup & Service</p></div>
 </section>
 
 <!-- ================= SERVICES ================= -->
 <section id="services" class="section">
     <div class="section-heading">
         <span>OUR SERVICES</span>
-        <h2>आम्ही देत असलेल्या <strong>सेवा</strong></h2>
-        <p>तुमच्या घरासाठी आवश्यक असलेल्या विविध सेवांचा एकाच ठिकाणी विश्वासू पर्याय.</p>
+        <h2>आमच्या प्रमुख <strong>सेवा</strong></h2>
+        <p>तुमच्या घरासाठी आवश्यक असलेल्या सर्व सेवा एकाच ठिकाणी.</p>
     </div>
     <div class="services-grid">
         <div class="service-card">
-            <div class="service-image"><img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=800&q=80"></div>
+            <div class="service-image"><img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=800&q=80" alt="Gas Repair"></div>
             <div class="service-content">
                 <div class="service-icon"><i class="fa-solid fa-fire"></i></div>
-                <h3>गॅस दुरुस्ती</h3>
-                <p>गॅस शेगडी, गॅस गळती आणि संबंधित दुरुस्ती सेवा.</p>
+                <h3>गॅस दुरुस्ती (Gas Repair)</h3>
+                <p>गॅस शेगडी, गॅस गळती आणि पाईपलाईन फिटिंग.</p>
                 <a href="#booking">Service Book →</a>
             </div>
         </div>
         <div class="service-card">
-            <div class="service-image"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80"></div>
-            <div class="service-content">
-                <div class="service-icon"><i class="fa-solid fa-fire-flame-simple"></i></div>
-                <h3>गॅस गिझर</h3>
-                <p>गॅस गिझर तपासणी, repair आणि maintenance.</p>
-                <a href="#booking">Service Book →</a>
-            </div>
-        </div>
-        <div class="service-card">
-            <div class="service-image"><img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=800&q=80"></div>
-            <div class="service-content">
-                <div class="service-icon"><i class="fa-solid fa-plug-circle-bolt"></i></div>
-                <h3>Electrical Service</h3>
-                <p>घरातील wiring, board, switch, light आणि electrical कामे.</p>
-                <a href="#booking">Service Book →</a>
-            </div>
-        </div>
-        <div class="service-card">
-            <div class="service-image"><img src="https://images.unsplash.com/photo-1598514982901-ae6275e5b7b7?auto=format&fit=crop&w=800&q=80"></div>
-            <div class="service-content">
-                <div class="service-icon"><i class="fa-solid fa-fan"></i></div>
-                <h3>कुलर & पंखे</h3>
-                <p>Cooler, fan आणि घरातील electrical appliances repair.</p>
-                <a href="#booking">Service Book →</a>
-            </div>
-        </div>
-        <div class="service-card">
-            <div class="service-image"><img src="https://images.unsplash.com/photo-1622350520581-5f1a3f9a1c68?auto=format&fit=crop&w=800&q=80"></div>
+            <div class="service-image"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80" alt="Geyser"></div>
             <div class="service-content">
                 <div class="service-icon"><i class="fa-solid fa-temperature-arrow-up"></i></div>
-                <h3>Electric Geyser</h3>
-                <p>Electric geyser repair आणि maintenance.</p>
+                <h3>गॅस व इलेक्ट्रिक गिझर</h3>
+                <p>गॅस आणि इलेक्ट्रिक गिझर दुरुस्ती व मेंटेनन्स.</p>
                 <a href="#booking">Service Book →</a>
             </div>
         </div>
         <div class="service-card">
-            <div class="service-image"><img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=800&q=80"></div>
+            <div class="service-image"><img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=800&q=80" alt="Electrical"></div>
+            <div class="service-content">
+                <div class="service-icon"><i class="fa-solid fa-plug-circle-bolt"></i></div>
+                <h3>Electrical Wiring Work</h3>
+                <p>घरातील नवीन वायरिंग, बोर्ड, स्विच आणि लाईटचे काम.</p>
+                <a href="#booking">Service Book →</a>
+            </div>
+        </div>
+        <div class="service-card">
+            <div class="service-image"><img src="https://images.unsplash.com/photo-1598514982901-ae6275e5b7b7?auto=format&fit=crop&w=800&q=80" alt="Appliances"></div>
+            <div class="service-content">
+                <div class="service-icon"><i class="fa-solid fa-fan"></i></div>
+                <h3>कुलर आणि पंखे (Appliances)</h3>
+                <p>कुलर, सिलिंग फॅन आणि होम अप्लायन्सेस रिपेअर.</p>
+                <a href="#booking">Service Book →</a>
+            </div>
+        </div>
+        <div class="service-card">
+            <div class="service-image"><img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=800&q=80" alt="Solar"></div>
             <div class="service-content">
                 <div class="service-icon"><i class="fa-solid fa-solar-panel"></i></div>
                 <h3>Solar Installation</h3>
-                <p>घरासाठी Solar system installation आणि related services.</p>
+                <p>घरासाठी सोलर पॅनेल इन्स्टॉलेशन व सर्व्हिसिंग.</p>
+                <a href="#booking">Service Book →</a>
+            </div>
+        </div>
+        <div class="service-card">
+            <div class="service-image"><img src="https://images.unsplash.com/photo-1622350520581-5f1a3f9a1c68?auto=format&fit=crop&w=800&q=80" alt="Mixer Repair"></div>
+            <div class="service-content">
+                <div class="service-icon"><i class="fa-solid fa-blender"></i></div>
+                <h3>Mixer Repair & Service</h3>
+                <p>मिक्सर ग्राइंडर दुरुस्ती व जार रिपेअर.</p>
                 <a href="#booking">Service Book →</a>
             </div>
         </div>
@@ -222,19 +191,19 @@
 
 <!-- ================= ABOUT ================= -->
 <section id="about" class="about-section">
-    <div class="about-image"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1000&q=80"></div>
+    <div class="about-image"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1000&q=80" alt="About Us"></div>
     <div class="about-content">
         <span>ABOUT US</span>
         <h2>Laxmi Home Appliances <strong>& Solar</strong></h2>
         <p>Laxmi Home Appliances & Solar मध्ये आपल्या घरासाठी Gas, Electrical, Home Appliances आणि Solar संबंधित विविध सेवा उपलब्ध आहेत.</p>
         <p>आमचे उद्दिष्ट म्हणजे ग्राहकांना विश्वासू, सोयीस्कर आणि घरपोच सेवा उपलब्ध करून देणे.</p>
         <div class="about-points">
-            <div><i class="fa-solid fa-circle-check"></i> Experienced Service</div>
-            <div><i class="fa-solid fa-circle-check"></i> Home Service</div>
-            <div><i class="fa-solid fa-circle-check"></i> Multiple Services</div>
+            <div><i class="fa-solid fa-circle-check"></i> Experienced Technicians</div>
+            <div><i class="fa-solid fa-circle-check"></i> Doorstep Service</div>
+            <div><i class="fa-solid fa-circle-check"></i> Affordable Rates</div>
             <div><i class="fa-solid fa-circle-check"></i> Customer Support</div>
         </div>
-        <a href="#booking" class="btn primary">Book Service</a>
+        <a href="#booking" class="btn primary">Book Service Now</a>
     </div>
 </section>
 
@@ -245,12 +214,12 @@
         <h2>फोटो <strong>Gallery</strong></h2>
     </div>
     <div class="gallery-grid">
-        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=800&q=80">
-        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80">
-        <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=800&q=80">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80">
-        <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=800&q=80">
-        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=800&q=80" alt="Work 1">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80" alt="Work 2">
+        <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=800&q=80" alt="Work 3">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80" alt="Work 4">
+        <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=800&q=80" alt="Work 5">
+        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80" alt="Work 6">
     </div>
 </section>
 
@@ -260,45 +229,45 @@
         <div class="booking-info">
             <span>BOOK A SERVICE</span>
             <h2>घरबसल्या <strong>Service Book</strong> करा</h2>
-            <p>खालील form भरा. तुमची service request तयार होईल व थेट व्हॉट्सॲपवर मिळेल.</p>
+            <p>खालील फॉर्म भरा. तुमची सर्व्हिस रिक्वेस्ट थेट आमच्या व्हॉट्सॲपवर सुरक्षितपणे मिळेल.</p>
             <div class="booking-benefit">
                 <i class="fa-solid fa-house"></i>
-                <div><h4>Home Service</h4><p>तुमच्या पत्त्यावर सेवा</p></div>
+                <div><h4>Home Service</h4><p>तुमच्या पत्त्यावर त्वरित सेवा</p></div>
             </div>
             <div class="booking-benefit">
                 <i class="fa-solid fa-phone"></i>
-                <div><h4>Quick Contact</h4><p>Service request नंतर संपर्क</p></div>
+                <div><h4>Quick Response</h4><p>रिक्वेस्ट मिळाल्यानंतर लगेच कॉल</p></div>
             </div>
         </div>
 
         <form id="bookingForm" class="booking-form" action="https://formspree.io/f/xjyvebwv" method="POST">
             <h3>Service Booking Form</h3>
-            <label>तुमचे नाव</label>
-            <input type="text" id="customerName" name="customerName" placeholder="उदा. Ajay" required>
+            <label>तुमचे नाव (Customer Name)</label>
+            <input type="text" id="customerName" name="customerName" placeholder="उदा. अजय पाटील" required>
 
-            <label>मोबाईल नंबर</label>
+            <label>मोबाईल नंबर (Mobile Number)</label>
             <input type="tel" id="customerPhone" name="customerPhone" placeholder="10 digit mobile number" pattern="[0-9]{10}" maxlength="10" required>
 
-            <label>सेवा निवडा</label>
+            <label>सेवा निवडा (Select Service)</label>
             <select id="service" name="service" required>
                 <option value="">-- सेवा निवडा --</option>
-                <option>गॅस दुरुस्ती</option>
-                <option>गॅस गळती</option>
-                <option>गॅस गिझर दुरुस्ती</option>
-                <option>इलेक्ट्रिक गिझर दुरुस्ती</option>
-                <option>कुलर दुरुस्ती</option>
-                <option>पंखा दुरुस्ती</option>
-                <option>Electrical Work</option>
+                <option>गॅस दुरुस्ती (Gas Repair)</option>
+                <option>गॅस गळती तपासणी (Gas Leakage)</option>
+                <option>गॅस गिझर दुरुस्ती (Gas Geyser)</option>
+                <option>इलेक्ट्रिक गिझर दुरुस्ती (Electric Geyser)</option>
+                <option>कुलर व पंखा दुरुस्ती (Cooler & Fan)</option>
+                <option>Electrical Wiring Work</option>
                 <option>Gas Pipeline Work</option>
                 <option>Solar Installation</option>
-                <option>इतर सेवा</option>
+                <option>Mixer Repair & Service</option>
+                <option>इतर सेवा (Other Service)</option>
             </select>
 
-            <label>तुमचा पत्ता</label>
-            <textarea id="customerAddress" name="customerAddress" placeholder="पूर्ण पत्ता" required></textarea>
+            <label>तुमचा पत्ता (Address)</label>
+            <textarea id="customerAddress" name="customerAddress" placeholder="पूर्ण पत्ता (उदा. भावसार चौक, नांदेड)" required></textarea>
 
-            <label>समस्येची माहिती</label>
-            <textarea id="customerMessage" name="customerMessage" placeholder="तुम्हाला कोणती समस्या आहे?"></textarea>
+            <label>समस्येची माहिती (Problem Description)</label>
+            <textarea id="customerMessage" name="customerMessage" placeholder="तुम्हाला नेमकी कोणती अडचण आहे?"></textarea>
 
             <button type="submit" class="btn primary full"><i class="fa-solid fa-calendar-check"></i> Service Book करा</button>
         </form>
@@ -314,7 +283,7 @@
             <i class="fa-solid fa-location-dot"></i>
             <div>
                 <h4>Shop Address</h4>
-                <p>Shivparvati Mangal Karyalay,<br>Malegaon Road, Bhavsar Chowk,<br>Nanded - 431605, Maharashtra</p>
+                <p>शिवपार्वती मंगल कार्यालय,<br>मालेगाव रोड, भावसार चौक,<br>नांदेड - 431605, महाराष्ट्र</p>
             </div>
         </div>
         <div class="contact-item">
@@ -376,7 +345,7 @@
         </div>
         <div>
             <h3>Contact</h3>
-            <p>Shivparvati Mangal Karyalay,<br>Malegaon Road, Bhavsar Chowk,<br>Nanded - 431605</p>
+            <p>शिवपार्वती मंगल कार्यालय,<br>मालेगाव रोड, भावसार चौक,<br>नांदेड - 431605</p>
         </div>
     </div>
     <div class="footer-bottom">
@@ -388,18 +357,17 @@
 <div class="floating-buttons">
     <a href="tel:+917020279531" class="float-call"><i class="fa-solid fa-phone"></i></a>
     <a href="https://wa.me/917020279531?text=नमस्कार,%20मला%20माहिती%20हवी%20आहे." target="_blank" class="float-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
-    <!-- AI Chatbot Trigger Floating Button -->
     <button class="float-ai" onclick="toggleChatbot()"><i class="fa-solid fa-robot"></i></button>
 </div>
 
-<!-- AI Chatbot Box (Hidden by default) -->
+<!-- AI Chatbot Box -->
 <div id="aiChatBox" class="ai-chatbot-container hidden">
     <div class="ai-chat-header">
         <span>🤖 Laxmi AI Assistant</span>
         <button onclick="toggleChatbot()"><i class="fa-solid fa-xmark"></i></button>
     </div>
     <div class="ai-chat-body" id="aiChatBody">
-        <div class="ai-msg bot">नमस्कार! मी लक्ष्मी होम अप्लायन्सेसचा असिस्टंट आहे. तुम्हाला गॅस, गिझर किंवा सोलरबद्दल काय माहिती हवी आहे?</div>
+        <div class="ai-msg bot">नमस्कार! मी लक्ष्मी होम अप्लायन्सेसचा असिस्टंट आहे. तुम्हाला गॅस, गिझर किंवा सोलरबद्दल काय मदत हवी आहे?</div>
     </div>
     <div class="ai-chat-footer">
         <input type="text" id="aiUserInput" placeholder="इथे प्रश्न लिहा..." onkeypress="handleChatKey(event)">
@@ -410,5 +378,4 @@
 <div id="toast"></div>
 <script src="script.js"></script>
 </body>
-                                           </html>
-    
+</html>
