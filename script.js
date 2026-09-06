@@ -44,9 +44,8 @@ changeLanguage("auto");
 
 const bookingForm = document.getElementById("bookingForm");
 
-// प्रत्येक नवीन बुकिंगसाठी रँडम नंबर तयार करणे
 function generateServiceNumber() {
-    let randomNum = Math.floor(1000 + Math.random() * 9000); // ४ अंकी रँडम नंबर
+    let randomNum = Math.floor(1000 + Math.random() * 9000);
     return "LSH-" + randomNum;
 }
 
@@ -61,8 +60,6 @@ bookingForm.addEventListener("submit", async function(event) {
 
     const serviceId = generateServiceNumber();
     const formData = new FormData(bookingForm);
-    
-    // युनिक सर्विस आयडी फॉर्मस्प्रीकडे पाठवण्यासाठी जोडणे
     formData.append("Service_ID", serviceId);
 
     const name = document.getElementById("customerName").value.trim();
@@ -90,7 +87,6 @@ Laxmi Home Appliances & Solar`;
 
     const whatsappURL = "https://wa.me/" + businessNumber + "?text=" + encodeURIComponent(whatsappMessage);
 
-    // सबमिट होत असताना बटणवर लोडिंग दाखवणे
     const submitBtn = bookingForm.querySelector("button[type='submit']");
     const originalBtnText = submitBtn.innerHTML;
     submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
@@ -106,9 +102,15 @@ Laxmi Home Appliances & Solar`;
         });
 
         if (response.ok) {
-            showBookingSuccessModal(serviceId, whatsappURL);
+            // ग्राहकाला व्हॉट्सॲपवर न पाठवता, बॅकग्राउंडला आपोआप मालकाच्या व्हॉट्सॲपवर मेसेज पाठवणे
+            const iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.src = whatsappURL;
+            document.body.appendChild(iframe);
+
+            // स्क्रीनवर Congratulations आणि Successful मेसेज दाखवणे
+            showBookingSuccessModal(serviceId);
             bookingForm.reset();
-            showToast("Successfully submitted your service!");
         } else {
             showToast("काहीतरी चूक झाली, पुन्हा प्रयत्न करा.");
         }
@@ -121,10 +123,9 @@ Laxmi Home Appliances & Solar`;
 });
 
 
-/* ================= SUCCESS MODAL & WHATSAPP BUTTON ================= */
+/* ================= SUCCESS MODAL (CONGRATULATIONS) ================= */
 
-function showBookingSuccessModal(serviceId, whatsappURL) {
-    // जर आधीपासूनच मॉडेल असेल तर काढून टाकणे
+function showBookingSuccessModal(serviceId) {
     let oldModal = document.getElementById("successModal");
     if (oldModal) oldModal.remove();
 
@@ -140,18 +141,15 @@ function showBookingSuccessModal(serviceId, whatsappURL) {
     modal.style.padding = "20px";
 
     modal.innerHTML = `
-        <div style="background: white; padding: 30px; border-radius: 15px; text-align: center; max-width: 400px; width: 100%; box-shadow: 0 10px 25px rgba(0,0,0,0.3);">
-            <h2 style="color: #28a745; margin-bottom: 10px;">✅ Successfully submitted your service!</h2>
-            <p style="color: #555; font-size: 15px; margin-bottom: 15px;">तुमची सर्विस यशस्वीरित्या बुक झाली आहे. आम्ही लवकरात लवकर संपर्क करू.</p>
-            <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 20px; font-weight: bold; color: #333;">
-                Service ID: <span style="color: #007bff;">${serviceId}</span>
+        <div style="background: white; padding: 35px 25px; border-radius: 20px; text-align: center; max-width: 420px; width: 100%; box-shadow: 0 15px 35px rgba(0,0,0,0.3); animation: scaleUp 0.3s ease;">
+            <div style="font-size: 50px; color: #28a745; margin-bottom: 10px;">🎉</div>
+            <h2 style="color: #28a745; font-size: 22px; font-weight: bold; margin-bottom: 10px;">Congratulations! Successfully booked your service.</h2>
+            <p style="color: #555; font-size: 14px; margin-bottom: 15px;">तुमची सर्विस यशस्वीरित्या बुक झाली आहे. याची माहिती दुकानदाराच्या व्हॉट्सॲपवर पाठवण्यात आली आहे.</p>
+            <div style="background: #f8f9fa; padding: 12px; border-radius: 10px; margin-bottom: 20px; font-weight: bold; color: #333; border: 1px dashed #ddd;">
+                Service ID: <span style="color: #ff7200;">${serviceId}</span>
             </div>
-            <p style="font-size: 13px; color: #666; margin-bottom: 15px;">(पर्यायी) दुकानदाराच्या WhatsApp वर थेट मेसेज पाठवण्यासाठी खालील बटण दाबा:</p>
-            <a href="${whatsappURL}" target="_blank" style="display: inline-block; background: #25D366; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 15px; width: 100%; box-sizing: border-box; margin-bottom: 10px;">
-                💬 WhatsApp वर पाठवा
-            </a>
-            <button id="closeModalBtn" style="background: #ddd; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; width: 100%; font-weight: bold; color: #333;">
-                बंद करा
+            <button id="closeModalBtn" style="background: #ff7200; border: none; padding: 12px 20px; border-radius: 10px; cursor: pointer; width: 100%; font-weight: bold; color: white; font-size: 15px; box-shadow: 0 5px 15px rgba(255,114,0,0.3);">
+                ठीक आहे (OK)
             </button>
         </div>
     `;
@@ -226,3 +224,4 @@ cards.forEach(card => {
     card.style.transition = "all .7s ease";
     observer.observe(card);
 });
+        
