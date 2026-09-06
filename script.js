@@ -22,12 +22,6 @@ darkModeBtn.addEventListener("click", () => {
     }
 });
 
-/* ================= PRICE ESTIMATOR ================= */
-function calculatePrice() {
-    const price = document.getElementById("estimatorService").value;
-    document.getElementById("estimatedPrice").textContent = "₹" + price;
-}
-
 /* ================= LIVE SERVICE TRACKING ================= */
 let savedBookings = JSON.parse(localStorage.getItem("laxmiBookings")) || {};
 
@@ -46,7 +40,7 @@ function trackService() {
         </div>`;
     } else {
         resultBox.innerHTML = `<div style="background:#ffebee; color:#c62828; padding:12px; border-radius:8px; margin-top:10px;">
-            हा ID (<strong>${id}</strong>) सध्या आमच्या रेकॉर्डमध्ये 'Pending/Processing' आहे किंवा चुकीचा आहे. लवकरच टीम तुमच्याशी संपर्क साधेल.
+            हा ID (<strong>${id}</strong>) आमच्या रेकॉर्डमध्ये प्रोसेसिंगमध्ये आहे. लवकरच टीम संपर्क करेल.
         </div>`;
     }
 }
@@ -65,14 +59,11 @@ function showSlides(n) {
 }
 
 function currentSlide(n) { showSlides(n); }
-
-// दर ४ सेकंदांनी ऑटोमॅटिक स्लाइड बदलणे
 setInterval(() => { showSlides(slideIndex + 1); }, 4000);
 
 /* ================= FREE AI CHATBOT LOGIC ================= */
 function toggleChatbot() {
-    const box = document.getElementById("aiChatBox");
-    box.classList.toggle("hidden");
+    document.getElementById("aiChatBox").classList.toggle("hidden");
 }
 
 function sendAiMessage() {
@@ -85,16 +76,15 @@ function sendAiMessage() {
     input.value = "";
     chatBody.scrollTop = chatBody.scrollHeight;
 
-    // ऑटोमॅटिक उत्तर देणारे साधे AI लॉजिक
     setTimeout(() => {
-        let reply = "मला याबद्दल नक्कीच आनंद होईल! तुम्ही वर दिलेल्या 'सेवा बुक करा' फॉर्ममधून थेट तुमची सेवा नोंदवू शकता किंवा थेट कॉल करू शकता.";
+        let reply = "धन्यवाद! अधिक माहितीसाठी तुम्ही आम्हाला थेट कॉल किंवा व्हॉट्सॲप करू शकता.";
         const lower = text.toLowerCase();
-        if(lower.includes("gas") || lower.includes("गॅस") || lower.includes("गळती")) {
-            reply = "गॅस दुरुस्ती आणि गळती तपासणीसाठी आमचे तंत्रज्ञ तत्पर उपलब्ध आहेत. तुम्ही चार्ज ₹150 पासून पाहू शकता.";
+        if(lower.includes("gas") || lower.includes("गॅस")) {
+            reply = "गॅस दुरुस्ती आणि गळती तपासणीसाठी आमचे तंत्रज्ञ तत्पर आहेत. तुम्ही फॉर्म भरून सर्व्हिस बुक करू शकता.";
         } else if(lower.includes("solar") || lower.includes("सोलार")) {
-            reply = "घरासाठी सोलर इन्स्टॉलेशनच्या संपूर्ण माहितीसाठी तुम्ही थेट 7020279531 वर कॉल करू शकता.";
+            reply = "सोलार इन्स्टॉलेशनच्या संपूर्ण माहितीसाठी संपर्क करा: 7020279531.";
         } else if(lower.includes("pata") || lower.includes("address") || lower.includes("पत्ता")) {
-            reply = "आमचे दुकान: शिवपार्वती मंगल कार्यालय, मालेगाव रोड, भावसार चौक, नांदेड - 431605 येथे आहे.";
+            reply = "आमचे दुकान: भावसार चौक, नांदेड - 431605 येथे आहे.";
         }
         chatBody.innerHTML += `<div class="ai-msg bot">${reply}</div>`;
         chatBody.scrollTop = chatBody.scrollHeight;
@@ -129,8 +119,7 @@ bookingForm.addEventListener("submit", async function(event) {
     const address = document.getElementById("customerAddress").value.trim();
     const message = document.getElementById("customerMessage").value.trim();
 
-    // Local storage मध्ये सेव्ह करणे जेणेकरून युजर ट्रॅक करू शकेल
-    savedBookings[serviceId] = { name, service, status: "Pending / Approved (प्रोसेसिंग सुरू आहे)" };
+    savedBookings[serviceId] = { name, service, status: "Pending / Processing (प्रोसेसिंग सुरू आहे)" };
     localStorage.setItem("laxmiBookings", JSON.stringify(savedBookings));
 
     const businessNumber = "917020279531";
@@ -168,7 +157,7 @@ function showBookingSuccessModal(serviceId) {
             <h2 style="color: #28a745; font-size: 22px; font-weight: bold; margin-bottom: 10px;">Congratulations! Successfully booked your service.</h2>
             <p style="color: #555; font-size: 14px; margin-bottom: 15px;">तुमची सर्विस यशस्वीरित्या बुक झाली आहे. मेसेज थेट दुकानदाराच्या व्हॉट्सॲपवर पोहोचला आहे.</p>
             <div style="background: #f8f9fa; padding: 12px; border-radius: 10px; margin-bottom: 20px; font-weight: bold; color: #333; border: 1px dashed #ddd;">
-                Service ID: <span style="color: #ff7200;">${serviceId}</span> (हा नंबर ट्रॅकिंगसाठी लक्षात ठेवा)
+                Service ID: <span style="color: #ff7200;">${serviceId}</span>
             </div>
             <button id="closeModalBtn" style="background: #ff7200; border: none; padding: 12px 20px; border-radius: 10px; cursor: pointer; width: 100%; font-weight: bold; color: white; font-size: 15px;">ठीक आहे (OK)</button>
         </div>
